@@ -1,32 +1,32 @@
-# frontend
+# Front_end_web3
 
-Projet React + TypeScript généré avec Vite.
+Base frontend prête à développer avec **React + TypeScript + Vite**.
 
-## Démarrage rapide
+## Installation
 
 ```bash
 npm install
+```
+
+## Démarrage
+
+```bash
 npm run dev
 ```
 
-## Scripts disponibles
-
-| Commande         | Description                    |
-|------------------|-------------------------------|
-| `npm run dev`    | Lance le serveur de développement |
-| `npm run build`  | Build de production            |
-| `npm run preview`| Prévisualise le build          |
-| `npm run lint`   | Vérifie le code                |
-
 ## Structure
 
-```
+```txt
 src/
-├── api/          # Configuration Axios
-├── components/   # Composants réutilisables
-├── hooks/        # Hooks personnalisés
-├── pages/        # Pages de l'application
-├── store/        # État global (à compléter)
-├── types/        # Types TypeScript
-└── utils/        # Fonctions utilitaires
+├── assets/
+├── components/
+│   ├── App/
+│   ├── Factures/
+│   ├── Login/
+│   ├── Menu/
+│   └── UserList/
+├── contexts/
+├── lang/
+├── index.css
+└── main.tsx
 ```

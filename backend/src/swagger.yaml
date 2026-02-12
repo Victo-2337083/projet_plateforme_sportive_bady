@@ -1,0 +1,20 @@
+openapi: 3.0.3
+info:
+  title: Back_End_Web3 API
+  version: 1.0.0
+  description: API de base prête pour le développement.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/health:
+    get:
+      summary: Vérifie l'état de l'API et de la DB
+      responses:
+        '200':
+          description: OK
+  /api/users:
+    get:
+      summary: Liste des utilisateurs
+      responses:
+        '200':
+          description: OK

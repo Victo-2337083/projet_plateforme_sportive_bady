@@ -1,11 +1,10 @@
 import { Router } from 'express';
-import statusRoutes from './status.routes';
+import healthRouter from './health.routes';
+import userRouter from './user.routes';
 
-const router = Router();
+const apiRouter = Router();
 
-router.use('/', statusRoutes);
-// Ajoute tes routes ici :
-// router.use('/users', userRoutes);
+apiRouter.use('/health', healthRouter);
+apiRouter.use('/users', userRouter);
 
-export default router;
-
+export default apiRouter;

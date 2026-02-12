@@ -1,50 +1,42 @@
-# backend
+# Back_End_Web3
 
-Backend Node.js + TypeScript + Express + Prisma.
+Base backend prête à développer avec **Node.js + TypeScript + Express + Prisma + MySQL**.
 
-## Démarrage rapide
+## Installation
 
 ```bash
-# 1. Configure la base de données
+npm install
 cp .env.example .env
-# Édite DATABASE_URL dans .env
+```
 
-# 2. Applique le schéma Prisma
-npm run migrate
+Renseigne ensuite `DATABASE_URL` dans `.env`.
 
-# 3. Lance le serveur
+## Démarrage
+
+```bash
 npm run dev
 ```
 
-## Scripts disponibles
+## Scripts
 
-| Commande            | Description                          |
-|---------------------|--------------------------------------|
-| `npm run dev`       | Serveur de développement (nodemon)   |
-| `npm run build`     | Compilation TypeScript               |
-| `npm run start`     | Lance le build compilé               |
-| `npm run migrate`   | Applique les migrations Prisma       |
-| `npm run studio`    | Interface visuelle Prisma Studio     |
-| `npm run generate`  | Régénère le client Prisma            |
-| `npm run format`    | Formate le code avec Prettier        |
+- `npm run dev` : lance le serveur avec nodemon
+- `npm run build` : compile TypeScript
+- `npm run start` : démarre la version compilée
+- `npm run generate` : génère le client Prisma
+- `npm run migrate` : applique les migrations
 
 ## Structure
 
-```
+```txt
 src/
-├── config/         # Prisma client (singleton)
-├── controllers/    # Logique des requêtes HTTP
-├── middlewares/    # errorHandler, notFound, validate
-├── routes/         # Définition des routes
-├── services/       # Logique métier (à compléter)
-├── types/          # Types TypeScript partagés
-└── utils/          # logger, response helpers
+├── common/
+├── models/
+├── public/
+├── repos/
+├── routes/
+├── services/
+├── views/
+├── index.ts
+├── server.ts
+└── swagger.yaml
 ```
-
-## Routes disponibles
-
-| Méthode | Endpoint       | Description              |
-|---------|----------------|--------------------------|
-| GET     | /              | Santé de l'API           |
-| GET     | /api/status    | Statut + connexion DB    |
-
