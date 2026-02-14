@@ -1,0 +1,18 @@
+{
+  "name": "primary-learning-daily",
+  "private": true,
+  "packageManager": "pnpm@9.12.3",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "seed": "pnpm --filter api seed",
+    "npm:dev": "npm run dev -w web",
+    "npm:test": "npm run test -ws"
+  }
+}

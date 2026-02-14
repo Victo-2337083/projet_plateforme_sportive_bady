@@ -1,0 +1,28 @@
+services:
+  mongodb:
+    image: mongo:7
+    ports: ['27017:27017']
+    volumes: [mongo_data:/data/db]
+  api:
+    image: node:20
+    working_dir: /workspace
+    volumes: ['.:/workspace']
+    command: sh -c "corepack enable && pnpm install && pnpm --filter api dev"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/daily-learning
+      - JWT_SECRET=dev-secret
+      - OPENAI_TEXT_MODEL=gpt-4o-mini
+      - OPENAI_MODERATION_MODEL=omni-moderation-latest
+    ports: ['3001:3001']
+    depends_on: [mongodb]
+  web:
+    image: node:20
+    working_dir: /workspace
+    volumes: ['.:/workspace']
+    command: sh -c "corepack enable && pnpm install && pnpm --filter web dev"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+    ports: ['3000:3000']
+    depends_on: [api]
+volumes:
+  mongo_data:
