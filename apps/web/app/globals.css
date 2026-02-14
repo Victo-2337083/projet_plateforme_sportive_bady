@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-slate-50 text-slate-900; }
+.dyslexia { font-family: Arial, sans-serif; letter-spacing: 0.07em; }
+.big-btn { @apply text-xl px-6 py-4 rounded-xl bg-blue-600 text-white; }
